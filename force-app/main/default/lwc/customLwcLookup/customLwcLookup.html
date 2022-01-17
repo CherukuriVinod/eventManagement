@@ -1,10 +1,10 @@
 <template>
-    <div class="slds-var-m-around_large">
+    <div class="slds-var-m-around_xxx-small">
         <template if:false={selectedRecord}>
-            <c-lwc-Search-Component onsearch={hanldeSearch} search-label={label} isrequired="true"></c-lwc-Search-Component>
+            <c-lwc-Search-Component isrequired="true" onsearch={hanldeSearch} search-label={label} ></c-lwc-Search-Component>
         </template>
     </div>
-    <div class="slds-var-m-around_large slds-listbox slds-scrollable_y">
+    <div class="slds-var-m-around_xxx-small slds-listbox slds-scrollable_y">
         <template if:false={selectedRecord}>
             <template if:true={records}>
                 <template for:each={records} for:item="rec" for:index="index">
