@@ -1,0 +1,28 @@
+<template>
+    <lightning-card variant="Narrow" title="Lookup Demo" icon-name="standard:record">
+
+        <div class="slds-var-m-around_small">
+            <c-custom-Lwc-Lookup parentidfield="AccountId" field-name="Name" object-name="Account" label="Accounts"
+                iconname="standard:account">
+            </c-custom-Lwc-Lookup>
+        </div>
+
+        <div class="slds-var-m-around_small">
+            <c-custom-Lwc-Lookup parentidfield="ParentId" field-name="Name" object-name="Contact" label="Contacts"
+                iconname="standard:contact">
+            </c-custom-Lwc-Lookup>
+        </div>
+
+        <div class="slds-var-m-around_small">
+            <c-custom-Lwc-Lookup parentidfield="ParentId" field-name="Name" object-name="Opportunity" label="Opportunities"
+                iconname="standard:opportunity">
+            </c-custom-Lwc-Lookup>
+        </div>
+
+        <div class="slds-var-m-around_small">
+            <c-custom-Lwc-Lookup parentidfield="ParentId" field-name="CaseNumber" object-name="Case" label="Cases"
+                iconname="standard:case">
+            </c-custom-Lwc-Lookup>
+        </div>
+    </lightning-card>
+</template>

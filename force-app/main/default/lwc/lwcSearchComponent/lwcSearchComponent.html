@@ -1,0 +1,12 @@
+<template>
+    <lightning-input
+        type="search"
+        value={searchKeyword}
+        onchange={handleChange}
+        label={searchLabel}
+    ></lightning-input>
+</template>
+
+<!--{handleChange} To call a custom event and send that event to the parent component
+    Whenever the user types we will send inputs to the parent comp(Lookup Demo) and then  
+parent will call Apex(CustomSearchController) to return the requested records-->

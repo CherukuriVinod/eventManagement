@@ -1,0 +1,5 @@
+<aura:component implements="lightning:actionOverride, flexipage:availableForAllPageTypes, 
+flexipage:availableForRecordHome, forceCommunity:availableForAllPageTypes"
+    access="global">
+    <c:addEvent />
+</aura:component>

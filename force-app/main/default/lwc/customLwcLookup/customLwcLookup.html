@@ -1,0 +1,52 @@
+<template>
+    <div class="slds-var-m-around_large">
+        <template if:false={selectedRecord}>
+            <c-lwc-Search-Component onsearch={hanldeSearch} search-label={label} isrequired="true"></c-lwc-Search-Component>
+        </template>
+    </div>
+    <div class="slds-var-m-around_large slds-listbox slds-scrollable_y">
+        <template if:false={selectedRecord}>
+            <template if:true={records}>
+                <template for:each={records} for:item="rec" for:index="index">
+                    <ul key={rec.Id}>
+                        <c-lwc-Record-List key={rec.Id} rec={rec} iconname={iconname} onselect={handleSelect}>
+                        </c-lwc-Record-List>
+                    </ul>
+                </template>
+            </template>
+        </template>
+        <template if:true={selectedRecord}>
+            <label class="slds-form-element__label" for="unique-id-of-input">
+                {label}
+            </label>
+            <div class="slds-pill-container">
+                <lightning-pill class="pillSize" href="JavaScript:void(0);" label={selectedRecord.Name}
+                    name={selectedRecord.Name} onremove={handleRemove}>
+                    <lightning-icon icon-name={iconname} variant="circle" alternative-text={objectName}>
+                    </lightning-icon>
+                </lightning-pill>
+            </div>
+        </template>
+    </div>
+</template>
+
+<!--
+    This is going to act as container component (Line 2 to 6)
+    We have conditional statement (<template if:false={selectedRecord}>) saying that if no record is selected 
+    then only display this <c-lwc-Search-Component. If the record is selected we don't want to show that search
+    component that is why this conditional statement is there.
+
+    onsearch={hanldeSearch}: Whatever the event is fired by searchComponent we are handling here and there is method
+    handleSearch which will execute behind the scene and get the records.
+    
+    <template if:true={records} These records are coming from Apex Class (CustomSearchController)
+    
+     <template for:each={records} We are iterating
+
+     <c-lwc-Record-List: This is the record 
+     onselect={handleSelect}>
+    </c-lwc-Record-List>: Which record we have selected.
+
+    Line 18-If the user has selected any record we are going to display that record.
+
+-->
