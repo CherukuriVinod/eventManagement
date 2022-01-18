@@ -31,7 +31,7 @@ const columns = [
       fieldName: "StartDateTime",
       type: "date",
       cellAttributes: {
-        iconName: "standard:date_input",
+        iconName: "standard:date_time",
         iconPosition: "left"
       },
       typeAttributes: {
