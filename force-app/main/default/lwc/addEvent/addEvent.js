@@ -42,6 +42,12 @@ export default class AddEvent extends NavigationMixin (LightningElement) {
 
     handleClick(){
         const fields = {};
+        const isInputsCorrect = [...this.template.querySelectorAll('lightning-input')]
+        .reduce((validSoFar, inputField) => {
+            inputField.reportValidity();
+            return validSoFar && inputField.checkValidity();
+        }, true);
+        if (isInputsCorrect) {
         fields[Name_F.fieldApiName] = this.eventRecord.Name;
         fields[Event_Organizer__c.fieldApiName] = this.eventRecord.Event_Organizer__c;
         fields[Start_DateTime__c.fieldApiName] = this.eventRecord.Start_DateTime__c;
@@ -76,6 +82,7 @@ export default class AddEvent extends NavigationMixin (LightningElement) {
             }));
         });
     }
+}
     handleCancel() {
         this[NavigationMixin.Navigate]({
             type: 'standard__objectPage',

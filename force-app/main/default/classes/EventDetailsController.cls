@@ -8,7 +8,7 @@ public with sharing class EventDetailsController {
             WITH SECURITY_ENFORCED
         ];
         return speakerList;
-    }
+    } //Speaker__c is the Parent Object and EventSpeakers__c is the Child Object.
     
     @AuraEnabled
     public static Event__c getLocationDetails(String eventId) {
@@ -20,7 +20,7 @@ public with sharing class EventDetailsController {
             WITH SECURITY_ENFORCED
         ];
         return eventRecord;
-    }
+    } //Location__c is the Parent Object and Event__c is the Child Object.
 
     @AuraEnabled
     public static List<Event_Attendee__c> getAttendees(String eventId) {
@@ -30,5 +30,5 @@ public with sharing class EventDetailsController {
             WHERE Event__c = :eventId
             WITH SECURITY_ENFORCED
         ]; return eventAttendeeList; 
-    }
+    } //Attendee__c is the Parent Object and Event_Attendee__c is the child object.
 }

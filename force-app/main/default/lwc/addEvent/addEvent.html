@@ -7,9 +7,10 @@
                 {errors}
             </template>
         </div>
+
         <div class="slds-var-m-around_small">
             <legend class="slds-form-element__legend slds-form-element__label">Name</legend>
-            <lightning-input required="true" type="text" variant="standard" name="Name" value={eventRecord.Name}
+            <lightning-input required type="text" variant="standard" name="Name" value={eventRecord.Name}
                 onchange={handleChange}>
             </lightning-input>
             
@@ -29,13 +30,14 @@
             </lightning-input>
         
             <c-custom-lwc-lookup onselect={handleLookup} object-name="Location__c" field-name="Name"
-                parentidfield="Location__c" iconname="standard:location" label="Event Location">
+                parentidfield="Location__c" required iconname="standard:location" label="Event Location">
             </c-custom-lwc-lookup>
             <legend class="slds-form-element__legend slds-form-element__label">Event Details</legend>   
-            <lightning-input-rich-text required type="number" variant="standard" value={eventRecord.Event_Detail__c}
+            <lightning-input-rich-text label="Event Details" required="true" type="number" variant="standard" value={eventRecord.Event_Detail__c}
                 name="Event_Detail__c" onchange={handleChange}>
             </lightning-input-rich-text>
         </div>
+
         <div class="slds-align_absolute-center">
             <lightning-button variant="destructive" label="Cancel" title="Cancel" icon-name="utility:close" onclick={handleCancel}>
             </lightning-button>

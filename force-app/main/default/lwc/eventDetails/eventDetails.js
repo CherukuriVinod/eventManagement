@@ -22,7 +22,7 @@ const columns=[
       iconPosition: 'left'
     } 
   },
-  { label: "Company Name", fieldName: "CompanyName" }
+  { label: "Company Name", fieldName: "CompanyName", type: "text" }
 ];
 
 const columnsAtt = [
@@ -49,7 +49,14 @@ const columnsAtt = [
       iconPosition: "left" 
       }
     },
-    { label: "Company Name", fieldName: "CompanyName" },
+    { label: "Company Name", fieldName: "CompanyName",
+  
+        cellAttributes: {
+        iconName: "utility:company",
+        iconPosition: "left"
+      }
+  
+    },
     {
       label: "Location",
       fieldName: "Location",
@@ -81,7 +88,7 @@ export default class EventDetails extends  NavigationMixin (LightningElement) {
               speaker.Phone=speaker.Speaker__r.Phone__c;
               speaker.Picture__c = speaker.Speaker__r.Picture__c;
               speaker.About_Me__c = speaker.Speaker__r.About_Me__c; 
-              speaker.CompanyName=speaker.Speaker__r.Company__c;    
+              speaker.Company__c=speaker.Speaker__r.Company__c;    
             });
             this.speakerList=result;
             this.errors=undefined;
