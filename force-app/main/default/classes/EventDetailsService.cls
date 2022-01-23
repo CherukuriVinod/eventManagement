@@ -19,3 +19,6 @@ public with sharing class EventDetailsService {
         return eventList;
     }
 }
+
+//Location__c is the Parent Object and Event_Organizer__c is the child of Location__c Object and parent of Event__c
+// and Event__c is child of Location__c and Event_Organizer__c.

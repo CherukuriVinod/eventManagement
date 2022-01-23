@@ -3,7 +3,7 @@ import upcomingEvents from "@salesforce/apex/EventDetailsService.upcomingEvents"
 
 const columns = [
     {
-        label: "View",
+        label: "Event Name",
         fieldName: "detailsPage",
         type: "url",
         wrapText: "true",
@@ -17,15 +17,7 @@ const columns = [
           }
         }
     },
-    {
-      label: "Name",
-      fieldName: "Name__c",
-      wrapText: "true",
-      cellAttributes: {
-        iconName: "standard:event",
-        iconPosition: "left"
-      }
-    },
+    
     {
         label: "Event Organizer",
         fieldName: "EVNT_ORG",
@@ -45,17 +37,34 @@ const columns = [
         }
     },
     {
-        label: "Details",
-        fieldName: "Event_Detail__c",
-        type: "text",
+        label: "Start Date-Time",
+        fieldName: "Start_DateTime__c",
+        type: "date",
         wrapText: true,
-        cellAttributes: {
-            iconName: "action:info",
-            iconPosition: "left"
-        }
+        typeAttributes: {
+            iconName: "standard:date_time",
+            iconPosition: "left",
+            day: "2-digit",  
+            month: 'long',
+            year: 'numeric',  
+            hour: '2-digit',  
+            minute: '2-digit',    
+            hour12: true
+      }
+    },
+    {
+      label: "Event Details",
+      fieldName: "Event_Detail__c",
+      type: "richtext",
+      wrapText: true,
+      cellAttributes: {
+          iconName: "action:info",
+          iconPosition: "left"
+      }
     }
   ];
 export default class EventList extends LightningElement {
+  richtext = '<h2>Default <s>Value</s></h2>';
     columnsList = columns;
     error;
     startdattime;
