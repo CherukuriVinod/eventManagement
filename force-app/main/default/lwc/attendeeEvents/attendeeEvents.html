@@ -2,9 +2,9 @@
 <!-- sldsValidatorIgnore -->
 <!-- sldsValidatorIgnore -->
 <template>
-    <lightning-card variant="Narrow" title="My Events" icon-name="standard:event">
+    <lightning-card variant="Narrow" title="My Events" icon-name="standard:events">
         <div class="slds-var-m-around_small">
-            <lightning-accordion allow-multiple-sections-open active-section-name="Upcoming Events">
+            <lightning-accordion allow-multiple-sections-open active-section-name={activeSections}>
 
                 <lightning-accordion-section name="Upcoming Events" label="Upcoming Events">
                 

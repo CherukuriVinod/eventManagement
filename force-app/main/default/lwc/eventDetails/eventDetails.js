@@ -61,7 +61,7 @@ const columnsAtt = [
       label: "Location",
       fieldName: "Location",
       cellAttributes: {
-      iconName: "standard:location",
+      iconName: "standard:address",
       iconPosition: "left"
     }
   }

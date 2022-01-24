@@ -32,7 +32,7 @@ const columns = [
         fieldName: "Location",
         type: "text",
         cellAttributes: {
-          iconName: "standard:location",
+          iconName: "standard:address",
           iconPosition: "left"
         }
     },
@@ -41,17 +41,19 @@ const columns = [
         fieldName: "Start_DateTime__c",
         type: "date",
         wrapText: true,
-        typeAttributes: {
+        cellAttributes: {
             iconName: "standard:date_time",
-            iconPosition: "left",
-            day: "2-digit",  
-            month: 'long',
-            year: 'numeric',  
-            hour: '2-digit',  
-            minute: '2-digit',    
-            hour12: true
-      }
-    },
+            iconPosition: "left"
+          },
+          typeAttributes:{
+          day: "2-digit",  
+          month: 'long',
+          year: 'numeric',  
+          hour: '2-digit',  
+          minute: '2-digit',    
+          hour12: true
+        }
+      },
     {
       label: "Event Details",
       fieldName: "Event_Detail__c",
@@ -64,7 +66,6 @@ const columns = [
     }
   ];
 export default class EventList extends LightningElement {
-  richtext = '<h2>Default <s>Value</s></h2>';
     columnsList = columns;
     error;
     startdattime;

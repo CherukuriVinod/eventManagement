@@ -14,7 +14,7 @@ public with sharing class AttendeeEventsService {
           WITH SECURITY_ENFORCED
       ]; return eventLists;
   }
-
+//Event_Attendee__c is the Child, Location__c is the parent of Event__c, Event_Organizer__c is the parent of Event__c 
     
 @AuraEnabled
   public static List<Event_Attendee__c> pastEvents(String attendeeId) {

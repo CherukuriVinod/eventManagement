@@ -19,7 +19,7 @@ const columns = [
       }
     },
     {
-      label: "Name",
+      label: "Event Organizer",
       fieldName: "EVNTORG",
       cellAttributes: {
         iconName: "standard:user",
@@ -27,7 +27,7 @@ const columns = [
       }
     },
     {
-      label: "Event Date",
+      label: "Start Date/Time",
       fieldName: "StartDateTime",
       type: "date",
       cellAttributes: {
@@ -47,12 +47,14 @@ const columns = [
       fieldName: "Location",
       type: "text",
       cellAttributes: {
-        iconName: "standard:location",
+        iconName: "standard:address",
         iconPosition: "left"
       }
     }
   ];
 export default class AttendeeEvents extends LightningElement {
+
+  activeSections = ['Upcoming Events', 'Past Events'];
     
     @api recordId;
     @track events;

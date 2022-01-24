@@ -16,8 +16,8 @@ public with sharing class EventDetailsService {
             WHERE Start_DateTime__c >= Today AND Live__c = true
             WITH SECURITY_ENFORCED
           ];
-        return eventList;
-    }
+          return eventList;
+      }
 }
 
 //Location__c is the Parent Object and Event_Organizer__c is the child of Location__c Object and parent of Event__c

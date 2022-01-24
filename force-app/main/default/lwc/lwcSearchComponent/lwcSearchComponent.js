@@ -3,7 +3,7 @@ import { LightningElement,track,api } from 'lwc';
 export default class LwcSearchComponent extends LightningElement {
     @track searchKeyword;
     @api isrequired="false";//Lookup field is required
-    @api searchLabel="Search Account";//What label we want to display. On the Contact it is Account.
+    @api searchLabel="";//What label we want to display. On the Contact it is Account.
     @api showLabel = "true";//Either we want to show the label to the input search or not.
 
     /* Check the isrequired property is true then set the property to true*/
