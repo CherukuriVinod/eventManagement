@@ -8,7 +8,7 @@
                 <p>
                     <lightning-formatted-date-time value={__eventDetails.Start_DateTime__c} year="numeric" month="numeric" 
                         day="numeric" hour="2-digit" minute="2-digit" 
-                        time-zone="IST" time-zone-name="short" hour12="true">
+                        time-zone="EST" time-zone-name="short" hour12="true">
                     </lightning-formatted-date-time>
                 </p>
             </div>
@@ -36,16 +36,21 @@
             <!-- Event RSVP -->
             <div class="rsvp slds-var-p-around_large">
                 <lightning-layout multiple-rows>
-                    <lightning-layout-item size="12" padding="around-small" 
-                        small-device-size="12" medium-device-size="6" large-device-size="4" >
-                            The event is accepting RSVPs and the last date to RSVP is 
+                    <lightning-layout-item size="12" flexibility="auto"
+                        small-device-size="12" medium-device-size="6" large-device-size="4">
+                        <p>The event is accepting RSVPs and the last date to RSVP is: 
+                            <strong><lightning-formatted-date-time value={__eventDetails.Start_DateTime__c} 
+                                year="numeric" month="numeric" day="numeric" hour="2-digit" minute="2-digit" time-zone-name="short" time-zone="EST">
+                            </lightning-formatted-date-time></strong>
+                        </p>
+                             
                     </lightning-layout-item>
                     <lightning-layout-item size="12" padding="around-small" small-device-size="12" 
                         medium-device-size="6" large-device-size="4">
-                            <lightning-formatted-date-time value={__eventDetails.Start_DateTime__c} year="numeric" month="numeric" 
+                            <!--<lightning-formatted-date-time value={__eventDetails.Start_DateTime__c} year="numeric" month="numeric" 
                                 day="numeric" hour="2-digit" minute="2-digit" 
-                                time-zone="IST" time-zone-name="short" hour12="true">
-                            </lightning-formatted-date-time>
+                                time-zone="EST" time-zone-name="short" hour12="true">
+                            </lightning-formatted-date-time>-->
                     </lightning-layout-item>
                     <lightning-layout-item size="12" padding="around-small" small-device-size="12" 
                         medium-device-size="6" large-device-size="4">
@@ -190,7 +195,7 @@
 
             <!-- Contact us -->
             <div class="contactUs slds-var-p-around_large">
-                <lightning-button variant="brand" icon-name="standard:email" label="Contact Us" title="Contact Us" 
+                <lightning-button variant="brand" icon-name="utility:text_template" label="Contact Us" title="Contact Us" 
                     onclick={handleContactUs}>
                 </lightning-button>
             </div>

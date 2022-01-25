@@ -14,11 +14,11 @@
                 <lightning-icon icon-name="standard:event" size="small" title="Event Date"></lightning-icon>
                 &nbsp;
                 <lightning-formatted-date-time value={event.Start_DateTime__c} 
-                    year="numeric" month="short" >
+                weekday="long" day="2-digit" year="numeric" month="short" hour="numeric">
                 </lightning-formatted-date-time>
             </p>
             <p class="slds-var-p-top_medium">
-                <lightning-icon icon-name="standard:location" size="small" title="Location"></lightning-icon>
+                <lightning-icon icon-name="standard:address" size="small" title="Location"></lightning-icon>
                 &nbsp;
                 {event.Location__r.Name}
             </p>
