@@ -55,13 +55,21 @@ const columns = [
         }
       },
     {
-      label: "Event Details",
-      fieldName: "Event_Detail__c",
-      type: "richtext",
+      label: "End Date-Time",
+      fieldName: "End_Date_Time__c",
+      type: "date",
       wrapText: true,
       cellAttributes: {
-          iconName: "action:info",
+          iconName: "standard:date_time",
           iconPosition: "left"
+      },
+      typeAttributes:{
+        day: "2-digit",  
+        month: 'long',
+        year: 'numeric',  
+        hour: '2-digit',  
+        minute: '2-digit',    
+        hour12: true
       }
     }
   ];

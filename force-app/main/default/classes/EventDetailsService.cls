@@ -11,6 +11,7 @@ public with sharing class EventDetailsService {
             Location__r.Name,
             Event_Organizer__c,
             Start_DateTime__c,
+            End_Date_Time__c,
             Event_Organizer__r.Name
             FROM Event__c
             WHERE Start_DateTime__c >= Today AND Live__c = true
