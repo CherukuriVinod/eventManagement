@@ -38,13 +38,15 @@
                 <lightning-layout multiple-rows>
                     <lightning-layout-item size="12" flexibility="auto"
                         small-device-size="12" medium-device-size="6" large-device-size="4">
-                        <p>The event is accepting RSVPs and the last date to RSVP is: 
-                            <strong><lightning-formatted-date-time value={__eventDetails.Start_DateTime__c} 
-                                year="numeric" month="numeric" day="numeric" hour="2-digit" minute="2-digit" time-zone-name="short" time-zone="EST">
-                            </lightning-formatted-date-time></strong>
+                        <p>The event is accepting RSVPs and the last date to RSVP is:   
+                            <strong>
+                                <lightning-formatted-date-time value={__eventDetails.Start_DateTime__c} 
+                                    year="numeric" month="numeric" day="numeric" hour="2-digit" minute="2-digit" time-zone-name="short" time-zone="EST">
+                                </lightning-formatted-date-time>
+                            </strong>
                         </p>
-                             
                     </lightning-layout-item>
+
                     <lightning-layout-item size="12" padding="around-small" small-device-size="12" 
                         medium-device-size="6" large-device-size="4">
                             <!--<lightning-formatted-date-time value={__eventDetails.Start_DateTime__c} year="numeric" month="numeric" 
@@ -52,6 +54,7 @@
                                 time-zone="EST" time-zone-name="short" hour12="true">
                             </lightning-formatted-date-time>-->
                     </lightning-layout-item>
+                    
                     <lightning-layout-item size="12" padding="around-small" small-device-size="12" 
                         medium-device-size="6" large-device-size="4">
                             <!-- check if the event is completed  -->
@@ -63,7 +66,7 @@
                             <template if:false={__eventDetails.EventCompleted__c} >
                                 <template if:true={__rsvpCompleted}>
                                     <p>You are attending the event</p>
-                                    <a class="slds-button slds-button_neutral" href="JavaScript:void(0);" >
+                                    <a class="slds-button slds-button_destructive" href="JavaScript:void(0);" >
                                         un-rsvp from the event
                                     </a>
                                 </template>
@@ -109,7 +112,7 @@
                         <lightning-layout-item size="12" padding="around-small" small-device-size="12" medium-device-size="6" large-device-size="6">
                             <lightning-map
                                 markers-title="Event Location"
-                                zoom-level="16"
+                                zoom-level="15"
                                 map-markers={__mapMarkers}>
                             </lightning-map>
                         </lightning-layout-item>

@@ -12,8 +12,9 @@ public with sharing class AttendeeEventsService {
           AND Event__r.Start_DateTime__c >= today
           AND Event__r.Live__c = true
           WITH SECURITY_ENFORCED
-      ]; return eventLists;
-  }
+        ]; 
+        return eventLists;
+}
 //Event_Attendee__c is the Child, Location__c is the parent of Event__c, Event_Organizer__c is the parent of Event__c 
     
 @AuraEnabled
